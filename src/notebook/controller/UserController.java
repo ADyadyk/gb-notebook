@@ -34,14 +34,8 @@ public class UserController {
         repository.update(Long.parseLong(userId), update);
     }
 
-    // Вывод списка User используя FileOperation
-    public List<String> readAll(){
-        FileOperation fileOperation = new FileOperation("db.txt");
-        return fileOperation.readAll();
+    // Вывод списка User используя UserRepository
+    public List<User> readAll(){
+        return repository.findAll();
     }
-
-//    // Вывод списка User используя UserRepository
-//    public List<User> readAll(){
-//        return repository.findAll();
-//    }
 }

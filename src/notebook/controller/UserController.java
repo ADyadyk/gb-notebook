@@ -1,6 +1,7 @@
 package notebook.controller;
 
 import notebook.model.User;
+import notebook.model.dao.impl.FileOperation;
 import notebook.model.repository.GBRepository;
 
 import java.util.List;
@@ -32,4 +33,15 @@ public class UserController {
         update.setId(Long.parseLong(userId));
         repository.update(Long.parseLong(userId), update);
     }
+
+    // Вывод списка User используя FileOperation
+    public List<String> readAll(){
+        FileOperation fileOperation = new FileOperation("db.txt");
+        return fileOperation.readAll();
+    }
+
+//    // Вывод списка User используя UserRepository
+//    public List<User> readAll(){
+//        return repository.findAll();
+//    }
 }

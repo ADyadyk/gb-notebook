@@ -38,8 +38,14 @@ public class UserView {
                 case UPDATE:
                     String userId = prompt("Enter user id: ");
                     userController.updateUser(userId, createUser());
+                    break;
                 case LIST:
                     System.out.println(userController.readAll());
+                    break;
+                case DELETE:
+                    String userId2 = prompt("Enter user id: ");
+                    userController.deleteUser(userId2);
+                    break;
             }
         }
     }

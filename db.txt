@@ -1,3 +1,4 @@
 1,Vladimir,Lenin,000
-2,Iosif,Vasilev,666
-3,Grisha,Pullman,777
+4,Konstantin,Chernenko,4242
+5,Iosif,Stalin,666
+6,Mikhail,Gorbachev,000

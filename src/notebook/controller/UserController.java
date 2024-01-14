@@ -32,6 +32,11 @@ public class UserController {
         update.setId(Long.parseLong(userId));
         repository.update(Long.parseLong(userId), update);
     }
+    //Метод, который вызовет удаление user:
+    public void deleteUser(String userId){
+        repository.delete(Long.parseLong(userId));
+    }
+
 
     // Вывод списка User используя UserRepository
     public List<User> readAll(){

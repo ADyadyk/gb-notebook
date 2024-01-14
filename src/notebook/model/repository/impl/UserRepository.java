@@ -104,8 +104,14 @@ public class UserRepository implements GBRepository {
     }
 
     @Override
-    public boolean delete(Long id) {
-        return false;
+    public void delete(Long userId) {
+        List<User> users = findAll();
+        User deleteUser = users.stream()
+                .filter(u -> u.getId()
+                        .equals(userId))
+                .findFirst().orElseThrow(() -> new RuntimeException("User not found"));
+        users.remove(deleteUser);
+        write(users);
     }
 
     // Перенёс из устаревшего DAO:

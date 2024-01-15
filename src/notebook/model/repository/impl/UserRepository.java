@@ -8,10 +8,7 @@ import notebook.model.User;
 import notebook.model.repository.GBRepository;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
-import java.util.Scanner;
+import java.util.*;
 
 import static notebook.util.DBConnector.createDB;
 
@@ -202,5 +199,20 @@ public class UserRepository implements GBRepository {
     public void addUser(){
         User u = createUser();
         create(u);
+    }
+
+    @Override
+    public void readUserItem(){
+        String id = prompt("Идентификатор пользователя: ");
+        try {
+            List<User> users = findAll();
+            for (User user : users) {
+                if (Objects.equals(user.getId(), Long.parseLong(id))) {// ИСПРАВЬ
+                    System.out.println(user);
+                }
+            }
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 }

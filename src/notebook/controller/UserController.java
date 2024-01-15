@@ -19,15 +19,19 @@ public class UserController {
         repository.create(user);
     }
 
-    public User readUser(Long userId) throws Exception {
-        List<User> users = repository.findAll();
-        for (User user : users) {
-            if (Objects.equals(user.getId(), userId)) {
-                return user;
-            }
-        }
+//    public User readUser(Long userId) throws Exception {
+//        List<User> users = repository.findAll();
+//        for (User user : users) {
+//            if (Objects.equals(user.getId(), userId)) {
+//                return user;
+//            }
+//        }
+//
+//        throw new RuntimeException("User not found");
+//    }
 
-        throw new RuntimeException("User not found");
+    public void readUserItemController(){
+        repository.readUserItem();
     }
 
     public void updateUser(String userId, User update) {

@@ -8,3 +8,4 @@ ___
 4. Упростил ввод команд создав методы showCommands() и selectCommand() в слое model. Соответственно добавил методы selectCommandController() и showCommandController() в слой controller для их вызова их слоя model при обращении к ним из слоя view. В слое view подкорректировал метод run().
 5. Выполнил отчистку класса Main.java - перенёс все методы в соответствующие слои.
 6. Добавил возможность добавлять несколько записей (см. метод addMoreUsers() в класса UserRepository.java) и логику добавления одной записи перенес в слой model (см. метод addUser() в класса UserRepository.java).
+7. Перенес логику команды READ в слой model (см метод readUserItem() в класса UserRepository.java).

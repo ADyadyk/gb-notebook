@@ -19,4 +19,5 @@ public interface GBRepository {
     void createDataBase();
     void addMoreUsers();
     void addUser();
+    void readUserItem();
 }

@@ -31,14 +31,7 @@ public class UserView {
                     userController.addUserController();
                     break;
                 case READ:
-                    String id = userController.promptController("Идентификатор пользователя: ");
-                    try {
-                        User user = userController.readUser(Long.parseLong(id));
-                        System.out.println(user);
-                        System.out.println();
-                    } catch (Exception e) {
-                        throw new RuntimeException(e);
-                    }
+                    userController.readUserItemController();
                     break;
                 case UPDATE:
                     String userId = userController.promptController("Enter user id: ");
@@ -48,8 +41,7 @@ public class UserView {
                     System.out.println(userController.readAll());
                     break;
                 case DELETE:
-                    String userId2 = userController.promptController("Enter user id: ");
-                    userController.deleteUser(userId2);
+                    userController.deleteUser(userController.promptController("Enter user id: "));
                     break;
             }
         }

@@ -158,7 +158,7 @@ public class UserRepository implements GBRepository {
 
     @Override
     public Commands selectCommand(String commandNumber){
-        if(Integer.parseInt(commandNumber) == 1) return Commands.NONE;
+        if(Integer.parseInt(commandNumber) == 1) return Commands.ADD_MORE;
         if(Integer.parseInt(commandNumber) == 2) return Commands.READ;
         if(Integer.parseInt(commandNumber) == 3) return Commands.CREATE;
         if(Integer.parseInt(commandNumber) == 4) return Commands.UPDATE;
@@ -170,7 +170,7 @@ public class UserRepository implements GBRepository {
 
     @Override
     public void showCommands(){
-        System.out.println("1 - Команда не определена");
+        System.out.println("1 - Добавить несколько записей");
         System.out.println("2 - Прочитать запись по id");
         System.out.println("3 - Создать запись");
         System.out.println("4 - Обновить данные в записи");
@@ -181,5 +181,26 @@ public class UserRepository implements GBRepository {
     @Override
     public void createDataBase(){
         createDB();
+    }
+
+    @Override
+    public void addMoreUsers(){
+        addUser();
+        boolean check = true;
+        while (check) {
+            System.out.println("Добавить ещё одного абонента?");
+            System.out.println("1 - Да");
+            System.out.println("2 - Нет");
+            int number = Integer.parseInt(prompt("Сделайте выбор: "));
+            if(number == 2) check = false;
+            if(number == 1){
+                addUser();
+            }
+        }
+    }
+    @Override
+    public void addUser(){
+        User u = createUser();
+        create(u);
     }
 }

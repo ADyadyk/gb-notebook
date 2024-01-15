@@ -7,3 +7,4 @@ ___
 3. Перенёс методы prompt() и createUser() из UserView.java (слой view) в UserRepository.java (слой model). В UserController.java (слой controller) добавил два метода promptController() и createUserController(), которые вызывают из UserRepository.java соответствующие методы (когда из слоя view программа обращается к этим методам).
 4. Упростил ввод команд создав методы showCommands() и selectCommand() в слое model. Соответственно добавил методы selectCommandController() и showCommandController() в слой controller для их вызова их слоя model при обращении к ним из слоя view. В слое view подкорректировал метод run().
 5. Выполнил отчистку класса Main.java - перенёс все методы в соответствующие слои.
+6. Добавил возможность добавлять несколько записей (см. метод addMoreUsers() в класса UserRepository.java) и логику добавления одной записи перенес в слой model (см. метод addUser() в класса UserRepository.java).

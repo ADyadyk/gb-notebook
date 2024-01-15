@@ -24,9 +24,11 @@ public class UserView {
 
             if (com == Commands.EXIT) return;
             switch (com) {
+                case ADD_MORE:
+                    userController.addMoreUsersController();
+                    break;
                 case CREATE:
-                    User u = userController.createUserController();
-                    userController.saveUser(u);
+                    userController.addUserController();
                     break;
                 case READ:
                     String id = userController.promptController("Идентификатор пользователя: ");

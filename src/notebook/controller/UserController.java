@@ -60,4 +60,10 @@ public class UserController {
     public void crateDataBaseController(){
         repository.createDataBase();
     }
+    public void addMoreUsersController(){
+        repository.addMoreUsers();
+    }
+    public void addUserController(){
+        repository.addUser();
+    }
 }

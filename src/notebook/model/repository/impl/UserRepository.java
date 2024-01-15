@@ -13,6 +13,8 @@ import java.util.List;
 import java.util.Optional;
 import java.util.Scanner;
 
+import static notebook.util.DBConnector.createDB;
+
 public class UserRepository implements GBRepository {
     private final UserMapper mapper;
 
@@ -175,5 +177,9 @@ public class UserRepository implements GBRepository {
         System.out.println("5 - Вывести записи списком");
         System.out.println("6 - Удалить запись");
         System.out.println("7 - Выйти из справочника");
+    }
+    @Override
+    public void createDataBase(){
+        createDB();
     }
 }

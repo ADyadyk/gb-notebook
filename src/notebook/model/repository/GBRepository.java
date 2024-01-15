@@ -16,4 +16,5 @@ public interface GBRepository {
     User createUser();
     Commands selectCommand(String commandNumber);
     void showCommands();
+    void createDataBase();
 }

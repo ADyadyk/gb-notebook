@@ -2,6 +2,7 @@ package notebook.controller;
 
 import notebook.model.User;
 import notebook.model.repository.GBRepository;
+import notebook.model.repository.impl.UserRepository;
 import notebook.util.Commands;
 
 import java.util.List;
@@ -10,8 +11,8 @@ import java.util.Objects;
 public class UserController {
     private final GBRepository repository;
 
-    public UserController(GBRepository repository) {
-        this.repository = repository;
+    public UserController(){
+        this.repository = new UserRepository();
     }
 
     public void saveUser(User user) {
@@ -55,5 +56,8 @@ public class UserController {
     }
     public void showCommandsController(){
         repository.showCommands();
+    }
+    public void crateDataBaseController(){
+        repository.createDataBase();
     }
 }

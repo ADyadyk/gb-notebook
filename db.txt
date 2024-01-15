@@ -2,3 +2,5 @@
 4,Konstantin,Chernenko,4242
 5,Iosif,Stalin,666
 6,Nikita,Cruhnev,1111111
+7,Boris,Elcin,22222222
+8,Nikolay,Romanov,2

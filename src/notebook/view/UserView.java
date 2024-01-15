@@ -4,16 +4,16 @@ import notebook.controller.UserController;
 import notebook.model.User;
 import notebook.util.Commands;
 
-import java.util.Scanner;
 
 public class UserView {
     private final UserController userController;
 
-    public UserView(UserController userController) {
-        this.userController = userController;
+    public UserView(){
+        this.userController = new UserController();
     }
 
     public void run(){
+        userController.crateDataBaseController();
         Commands com;
 
         while (true) {
@@ -21,7 +21,6 @@ public class UserView {
             userController.showCommandsController();
             String commandNumber = userController.promptController("Введите номер команды: ");
             com = userController.selectCommandController(commandNumber);
-            //com = Commands.valueOf(command);
 
             if (com == Commands.EXIT) return;
             switch (com) {

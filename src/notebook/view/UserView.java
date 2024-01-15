@@ -1,7 +1,6 @@
 package notebook.view;
 
 import notebook.controller.UserController;
-import notebook.model.User;
 import notebook.util.Commands;
 
 

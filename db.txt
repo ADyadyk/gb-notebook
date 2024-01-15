@@ -1,4 +1,4 @@
 1,Vladimir,Lenin,000
 4,Konstantin,Chernenko,4242
 5,Iosif,Stalin,666
-6,Mikhail,Gorbachev,000
+6,Nikita,Cruhnev,1111111

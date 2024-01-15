@@ -37,9 +37,16 @@ public class UserController {
         repository.delete(Long.parseLong(userId));
     }
 
-
     // Вывод списка User используя UserRepository
     public List<User> readAll(){
         return repository.findAll();
+    }
+
+    public String promptController(String message){
+        return repository.prompt(message);
+    }
+
+    public User createUserController(){
+        return repository.createUser();
     }
 }

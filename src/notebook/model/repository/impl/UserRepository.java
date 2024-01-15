@@ -1,5 +1,6 @@
 package notebook.model.repository.impl;
 
+import notebook.util.Commands;
 import notebook.util.DBConnector;
 import notebook.util.UserValidator;
 import notebook.util.mapper.impl.UserMapper;
@@ -153,4 +154,26 @@ public class UserRepository implements GBRepository {
         return new User(firstName, lastName, phone);
     }
 
+    @Override
+    public Commands selectCommand(String commandNumber){
+        if(Integer.parseInt(commandNumber) == 1) return Commands.NONE;
+        if(Integer.parseInt(commandNumber) == 2) return Commands.READ;
+        if(Integer.parseInt(commandNumber) == 3) return Commands.CREATE;
+        if(Integer.parseInt(commandNumber) == 4) return Commands.UPDATE;
+        if(Integer.parseInt(commandNumber) == 5) return Commands.LIST;
+        if(Integer.parseInt(commandNumber) == 6) return Commands.DELETE;
+        if(Integer.parseInt(commandNumber) == 7) return Commands.EXIT;
+        return null;
+    }
+
+    @Override
+    public void showCommands(){
+        System.out.println("1 - Команда не определена");
+        System.out.println("2 - Прочитать запись по id");
+        System.out.println("3 - Создать запись");
+        System.out.println("4 - Обновить данные в записи");
+        System.out.println("5 - Вывести записи списком");
+        System.out.println("6 - Удалить запись");
+        System.out.println("7 - Выйти из справочника");
+    }
 }

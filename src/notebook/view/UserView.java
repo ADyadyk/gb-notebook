@@ -17,8 +17,12 @@ public class UserView {
         Commands com;
 
         while (true) {
-            String command = userController.promptController("Введите команду: ");
-            com = Commands.valueOf(command);
+
+            userController.showCommandsController();
+            String commandNumber = userController.promptController("Введите номер команды: ");
+            com = userController.selectCommandController(commandNumber);
+            //com = Commands.valueOf(command);
+
             if (com == Commands.EXIT) return;
             switch (com) {
                 case CREATE:

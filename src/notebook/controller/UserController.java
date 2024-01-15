@@ -2,6 +2,7 @@ package notebook.controller;
 
 import notebook.model.User;
 import notebook.model.repository.GBRepository;
+import notebook.util.Commands;
 
 import java.util.List;
 import java.util.Objects;
@@ -48,5 +49,11 @@ public class UserController {
 
     public User createUserController(){
         return repository.createUser();
+    }
+    public Commands selectCommandController(String commandNumber){
+        return repository.selectCommand(commandNumber);
+    }
+    public void showCommandsController(){
+        repository.showCommands();
     }
 }

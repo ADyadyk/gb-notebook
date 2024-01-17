@@ -43,17 +43,8 @@ public class UserController {
     public User createUserController(){
         return repository.createUser();
     }
-    public Commands selectCommandController(String commandNumber){
-        return repository.selectCommand(commandNumber);
-    }
-    public void showCommandsController(){
-        repository.showCommands();
-    }
     public void crateDataBaseController(){
         repository.createDataBase();
-    }
-    public void addMoreUsersController(){
-        repository.addMoreUsers();
     }
     public void addUserController(){
         repository.addUser();

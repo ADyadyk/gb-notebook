@@ -14,10 +14,7 @@ public interface GBRepository {
     void delete(Long id);
     String prompt(String message);
     User createUser();
-    Commands selectCommand(String commandNumber);
-    void showCommands();
     void createDataBase();
-    void addMoreUsers();
     void addUser();
     void readUserItem();
 }
